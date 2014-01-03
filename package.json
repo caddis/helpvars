@@ -2,7 +2,7 @@
 	"schema_version": "1.0",
 	"name" : "helpvars",
 	"label": "Helpvars",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"types": ["extension"],
 	"paths": {
 		"system": [

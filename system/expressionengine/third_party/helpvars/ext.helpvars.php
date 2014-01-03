@@ -11,7 +11,7 @@ class Helpvars_ext {
 
 	public $EE;
 	public $name = 'Helpvars';
-	public $version = '1.1.1';
+	public $version = '1.2.0';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = '';
 	public $settings_exist = 'n';
@@ -120,7 +120,7 @@ class Helpvars_ext {
 
 			// Grab category database results
 
-			$query = ee()->db->select('cat_id, cat_url_title, cat_name, cat_description, cat_image, parent_id')
+			$query = ee()->db->select('cat_id, cat_url_title, cat_name, cat_description, cat_image, group_id, parent_id')
 				->from('exp_categories')
 				->where('site_id', $site)
 				->where_in('cat_url_title', $segs)
@@ -145,6 +145,12 @@ class Helpvars_ext {
 					$data['segment_' . $ids[$row['cat_url_title']] . '_category_description'] = $row['cat_description'];
 					$data['segment_' . $ids[$row['cat_url_title']] . '_category_image'] = $row['cat_image'];
 					$data['segment_' . $ids[$row['cat_url_title']] . '_category_parent_id'] = $row['parent_id'];
+
+					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_id'] = $row['cat_id'];
+					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_name'] = $row['cat_name'];
+					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_description'] = $row['cat_description'];
+					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_image'] = $row['cat_image'];
+					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_parent_id'] = $row['parent_id'];
 
 					$cats[] = $row['cat_id'];
 

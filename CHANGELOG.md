@@ -1,3 +1,9 @@
+# 1.2.0
+
+2014-01-03
+
+- Added ability to get category segment data specific to category group
+
 # 1.1.1
 
 2013-10-27
