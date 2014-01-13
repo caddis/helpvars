@@ -1,3 +1,10 @@
+# 1.2.1
+
+2014-01-12
+
+- Added group selection options to last_segment variables
+- Added additional available parameters to readme
+
 # 1.2.0
 
 2014-01-03

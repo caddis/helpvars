@@ -9,9 +9,8 @@
 
 class Helpvars_ext {
 
-	public $EE;
 	public $name = 'Helpvars';
-	public $version = '1.2.0';
+	public $version = '1.2.1';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = '';
 	public $settings_exist = 'n';
@@ -79,6 +78,7 @@ class Helpvars_ext {
 
 	/**
 	 * Method for template_fetch_template hook
+	 * Based on low seg2cat
 	 *
 	 * @return void
 	 */
@@ -98,7 +98,7 @@ class Helpvars_ext {
 
 		if (REQ == 'PAGE' and ! empty(ee()->uri->segments))
 		{
-			$cats = $segs = array();
+			$cats = $segs = $groups = array();
 			$site = ee()->config->item('site_id');
 
 			$data['segment_category_ids'] = '';
@@ -138,7 +138,7 @@ class Helpvars_ext {
 
 				foreach ($query->result_array() as $row)
 				{
-					// Overwrite values in data array
+					// Override values in data array
 
 					$data['segment_' . $ids[$row['cat_url_title']] . '_category_id'] = $row['cat_id'];
 					$data['segment_' . $ids[$row['cat_url_title']] . '_category_name'] = $row['cat_name'];
@@ -153,6 +153,7 @@ class Helpvars_ext {
 					$data['segment_' . $ids[$row['cat_url_title']] . '_group_' . $row['group_id'] . '_category_parent_id'] = $row['parent_id'];
 
 					$cats[] = $row['cat_id'];
+					$groups[$row['group_id']][] = $row['cat_id'];
 
 					if ($ids[$row['cat_url_title']] === count($ids))
 					{
@@ -160,13 +161,26 @@ class Helpvars_ext {
 						$data['last_segment_category_name'] = $row['cat_name'];
 						$data['last_segment_category_description'] = $row['cat_description'];
 						$data['last_segment_category_image'] = $row['cat_image'];
+						$data['last_segment_category_parent_id'] = $row['parent_id'];
+
+						$data['last_segment_group_' . $row['group_id'] . '_category_id'] = $row['cat_id'];
+						$data['last_segment_group_' . $row['group_id'] . '_category_name'] = $row['cat_name'];
+						$data['last_segment_group_' . $row['group_id'] . '_category_description'] = $row['cat_description'];
+						$data['last_segment_group_' . $row['group_id'] . '_category_image'] = $row['cat_image'];
+						$data['last_segment_group_' . $row['group_id'] . '_category_parent_id'] = $row['parent_id'];
 					}
 				}
 
-				// Create inclusive stack of all category ids present in segments
+				// Create stack of all segment category ids
 
 				$data['segment_category_ids'] = implode('&', $cats);
 				$data['segment_category_ids_any'] = implode('|', $cats);
+
+				foreach ($groups as $key => $val)
+				{
+					$data['segment_group_' . $key . '_category_ids'] = implode('&', $val);
+					$data['segment_group_' . $key . '_category_ids_any'] = implode('|', $val);
+				}
 			}
 		}
 

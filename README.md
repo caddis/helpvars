@@ -1,4 +1,4 @@
-# Helpvars 1.2.0
+# Helpvars 1.2.1
 
 Make various segment and helper variables available globally.
 
@@ -8,6 +8,7 @@ Make various segment and helper variables available globally.
 	is_ajax
 	is_https
 	can_access_cp
+
 	segment_x_category_id
 	segment_x_category_name
 	segment_x_category_description
@@ -18,3 +19,19 @@ Make various segment and helper variables available globally.
 	segment_x_group_x_category_description
 	segment_x_group_x_category_image
 	segment_x_group_x_category_parent_id
+
+	last_segment_category_id
+	last_segment_category_name
+	last_segment_category_description
+	last_segment_category_image
+	last_segment_category_parent_id
+	last_segment_group_x_category_id
+	last_segment_group_x_category_name
+	last_segment_group_x_category_description
+	last_segment_group_x_category_image
+	last_segment_group_x_category_parent_id
+
+	segment_category_ids
+	segment_category_ids_any
+	segment_group_x_category_ids
+	segment_group_x_category_ids_any
