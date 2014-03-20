@@ -25,7 +25,7 @@ Example:
 Example:
 
 	{if is_https}
-		Your page is secure (provided your OS vendor has not fallen pray to strange goto fail bugs)!
+		Your page is secure (provided your OS vendor has not fallen prey to strange goto fail bugs)!
 	{/if}
 
 {can_access_cp}
