@@ -1,6 +1,8 @@
 # Helpvars 1.2.1
 
-A lightweight extension to make common segment and helper variable available globally. Do you need to get the category ID of a specific URL segment? Helpvars has you covered. Do you have the same category short name in two different groups? Not a problem, Helpvars lets you specify which category group to get the ID from.
+A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
+
+Do you need to get the category ID of a specific URL segment? Helpvars has you covered. Do you have the same category short name in two different groups? Not a problem, Helpvars lets you specify which category group to get the ID from.
 
 ## Global
 
