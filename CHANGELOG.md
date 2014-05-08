@@ -2,6 +2,7 @@
 
 2014-05-07
 
+- Added new paginated and not_paginated tags
 - Category segment variables now exclude native pagination segments
 
 # 1.2.1

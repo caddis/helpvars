@@ -77,6 +77,10 @@ class Helpvars_ext {
 		// Member variables
 		$data['can_access_cp'] = ee()->session->userdata('can_access_cp');
 
+		$data['paginated'] = false;
+		$data['not_paginated'] = true;
+		$data['last_segment_primary'] = '';
+
 		if (REQ == 'PAGE' and ! empty(ee()->uri->segments)) {
 			$cats = $segs = $groups = array();
 			$site = ee()->config->item('site_id');
@@ -87,6 +91,9 @@ class Helpvars_ext {
 
 			if (preg_match('/^[P][0-9]+$/i', end($segments))) {
 				array_pop($segments);
+
+				$data['paginated'] = true;
+				$data['not_paginated'] = false;
 			}
 
 			$data['last_segment_primary'] = end($segments);
