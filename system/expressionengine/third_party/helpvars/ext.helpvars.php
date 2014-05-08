@@ -89,6 +89,8 @@ class Helpvars_ext {
 				array_pop($segments);
 			}
 
+			$data['last_segment_primary'] = end($segments);
+
 			// Loop through segments and set default data
 			foreach ($segments as $num => $seg) {
 				$data['segment_' . $num . '_category_id'] = '';
