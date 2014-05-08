@@ -1,4 +1,4 @@
-# Helpvars 1.2.1
+# Helpvars 1.3.0
 
 A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
 
@@ -40,7 +40,7 @@ Example:
 
 ## Category Variables
 
-Check a segment to see if it matches up with a category short name and return the ID. Optionally specify the group the category should be in so you don't run into conflicts.
+Check a segment to see if it matches up with a category short name and return the ID. Optionally specify the group the category should be in so you don't run into conflicts. Keep in mind that category helpers exclude native pagination segments.
 
 {segment_x_category_id}  
 {segment_x_category_name}  

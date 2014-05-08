@@ -1,3 +1,9 @@
+# 1.3.0
+
+2014-05-07
+
+- Category segment variables now exclude native pagination segments
+
 # 1.2.1
 
 2014-01-12
