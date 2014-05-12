@@ -1,3 +1,9 @@
+# 1.3.1
+
+2014-05-12
+
+- Added default empty string values for common last_segment_x variables
+
 # 1.3.0
 
 2014-05-07
