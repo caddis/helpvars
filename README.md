@@ -55,7 +55,7 @@ Check a segment to see if it matches up with a category short name and return th
 {last_segment_category_id}  
 {last_segment_category_name}  
 {last_segment_category_description}  
-{{last_segment_category_image}  
+{last_segment_category_image}  
 {last_segment_category_parent_id}  
 {last_segment_group_x_category_id}  
 {last_segment_group_x_category_name}  
