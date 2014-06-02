@@ -10,6 +10,10 @@ Do you need to get the category ID of a specific URL segment? Helpvars has you c
 
 Returns all current URL segments separated by forward slash.
 
+{last_segment_primary}
+
+Print out the last segment that is not a pagination segment. Useful if you don't know what number of segments you might have but need to get the last segment with or without pagination.
+
 ## Conditional Checks
 
 {is_ajax}
@@ -36,6 +40,22 @@ Example:
 
 	{if can_access_cp}
 		Howdy! You have Control Panel access. Be sure to do good and not evil with your powers!
+	{/if}
+
+{paginated}
+
+Example:
+
+	{if paginated}
+		Your page is paginated. You've posted a lot of entries!
+	{/if}
+
+{not_paginated}
+
+Example:
+
+	{if not_paginated}
+		Your page is not paginated, better publish a few more entries!
 	{/if}
 
 ## Category Variables
