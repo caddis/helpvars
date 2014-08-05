@@ -1,4 +1,4 @@
-# Helpvars 1.3.1
+# Helpvars 1.3.2
 
 A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
 
@@ -40,6 +40,14 @@ Example:
 
 	{if can_access_cp}
 		Howdy! You have Control Panel access. Be sure to do good and not evil with your powers!
+	{/if}
+
+{logged_in_member_id}
+
+Example:
+
+	{if logged_in_member_id == "2"}
+		Hey there, you must be a specific member!
 	{/if}
 
 {paginated}

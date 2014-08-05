@@ -11,7 +11,7 @@
 class Helpvars_ext {
 
 	public $name = 'Helpvars';
-	public $version = '1.3.1';
+	public $version = '1.3.2';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = 'https://github.com/caddis/helpvars';
 	public $settings_exist = 'n';
@@ -76,6 +76,7 @@ class Helpvars_ext {
 
 		// Member variables
 		$data['can_access_cp'] = ee()->session->userdata('can_access_cp');
+		$data['logged_in_member_id'] = ee()->session->userdata('member_id');
 
 		$data['paginated'] = false;
 		$data['not_paginated'] = true;
