@@ -11,7 +11,7 @@
 class Helpvars_ext {
 
 	public $name = 'Helpvars';
-	public $version = '1.3.2';
+	public $version = '1.3.3';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = 'https://github.com/caddis/helpvars';
 	public $settings_exist = 'n';
@@ -93,7 +93,7 @@ class Helpvars_ext {
 
 			$data['segment_category_ids'] = '';
 
-			$segments = ee()->uri->segments;
+			$segments = array_map('strtolower', ee()->uri->segments);
 
 			if (preg_match('/^[P][0-9]+$/i', end($segments))) {
 				array_pop($segments);
@@ -116,7 +116,6 @@ class Helpvars_ext {
 			}
 
 			// Grab category database results
-
 			$query = ee()->db->select('cat_id, cat_url_title, cat_name, cat_description, cat_image, group_id, parent_id')
 				->from('exp_categories')
 				->where('site_id', $site)

@@ -1,6 +1,12 @@
-# 1.3.1
+# 1.3.3
 
-2014-05-12
+2014-08-26
+
+- Convert all segments to lowercase before processing
+
+# 1.3.2
+
+2014-08-05
 
 - Added new {logged_in_member_id} tag for early parsing
 
