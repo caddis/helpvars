@@ -1,3 +1,12 @@
+# 1.4.0
+
+2014-11-06
+
+- Added new logged_in_member_id tag
+- Added new base_segments tag to get all non-paginated segments
+- Added 2 new config values to control category variables and empty segment values
+- Increase efficiency by only allowing one execution
+
 # 1.3.3
 
 2014-08-26

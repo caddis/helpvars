@@ -1,14 +1,23 @@
-# Helpvars 1.3.3
+# Helpvars 1.4.0
 
 A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
 
 Do you need to get the category ID of a specific URL segment? Helpvars has you covered. Do you have the same category short name in two different groups? Not a problem, Helpvars lets you specify which category group to get the ID from.
+
+## Config Values
+
+$config['helpvars_set_category_vars'] = true; // Defaults to true, set to false to disable category logic and remove overhead
+$config['helpvars_max_empty_segments'] = 5; // Defaults to false, optionally set to integer representing number of empty segments to set category data for
 
 ## Global
 
 {all_segments}
 
 Returns all current URL segments separated by forward slash.
+
+{base_segments}
+
+Returns all current URL segments except pagination separated by forward slash.
 
 {last_segment_primary}
 
@@ -70,30 +79,30 @@ Example:
 
 Check a segment to see if it matches up with a category short name and return the ID. Optionally specify the group the category should be in so you don't run into conflicts. Keep in mind that category helpers exclude native pagination segments.
 
-{segment_x_category_id}  
-{segment_x_category_name}  
-{segment_x_category_description}  
-{segment_x_category_image}  
-{segment_x_category_parent_id}  
-{segment_x_group_x_category_id}  
-{segment_x_group_x_category_name}  
-{segment_x_group_x_category_description}  
-{segment_x_group_x_category_image}  
-{segment_x_group_x_category_parent_id}  
-{last_segment_category_id}  
-{last_segment_category_name}  
-{last_segment_category_description}  
-{last_segment_category_image}  
-{last_segment_category_parent_id}  
-{last_segment_group_x_category_id}  
-{last_segment_group_x_category_name}  
-{last_segment_group_x_category_description}  
-{last_segment_group_x_category_image}  
-{last_segment_group_x_category_parent_id}  
-{segment_category_ids}  
-{segment_category_ids_any}  
-{segment_group_x_category_ids}  
-{segment_group_x_category_ids_any}  
+{segment_x_category_id}
+{segment_x_category_name}
+{segment_x_category_description}
+{segment_x_category_image}
+{segment_x_category_parent_id}
+{segment_x_group_x_category_id}
+{segment_x_group_x_category_name}
+{segment_x_group_x_category_description}
+{segment_x_group_x_category_image}
+{segment_x_group_x_category_parent_id}
+{last_segment_category_id}
+{last_segment_category_name}
+{last_segment_category_description}
+{last_segment_category_image}
+{last_segment_category_parent_id}
+{last_segment_group_x_category_id}
+{last_segment_group_x_category_name}
+{last_segment_group_x_category_description}
+{last_segment_group_x_category_image}
+{last_segment_group_x_category_parent_id}
+{segment_category_ids}
+{segment_category_ids_any}
+{segment_group_x_category_ids}
+{segment_group_x_category_ids_any}
 
 Example:
 
