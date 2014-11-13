@@ -1,3 +1,10 @@
+# 1.4.1
+
+2014-11-13
+
+- Fix breaking issue where "helpvars_set_category_vars" setting was evaluated as false by default, correct settings are 'y' and 'n'
+- Fix issue where returning the current $row would break the context of the template
+
 # 1.4.0
 
 2014-11-06

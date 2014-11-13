@@ -11,7 +11,7 @@
 class Helpvars_ext {
 
 	public $name = 'Helpvars';
-	public $version = '1.4.0';
+	public $version = '1.4.1';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = 'https://github.com/caddis/helpvars';
 	public $settings_exist = 'n';
@@ -65,7 +65,7 @@ class Helpvars_ext {
 	*
 	* @return void
 	*/
-	public function template_fetch_template($row)
+	public function template_fetch_template()
 	{
 		static $set;
 
@@ -104,7 +104,7 @@ class Helpvars_ext {
 
 			$seg_count = count($segments);
 
-			if (ee()->config->item('helpvars_set_category_vars') !== false) {
+			if (ee()->config->item('helpvars_set_category_vars') !== 'n') {
 				$data['last_segment_primary'] = '';
 				$data['last_segment_category_id'] = '';
 				$data['last_segment_category_name'] = '';
@@ -210,7 +210,5 @@ class Helpvars_ext {
 
 			ee()->config->_global_vars = ee()->config->_global_vars + $data;
 		}
-
-		return $row;
 	}
 }
