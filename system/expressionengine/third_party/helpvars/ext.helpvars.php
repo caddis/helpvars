@@ -11,7 +11,7 @@
 class Helpvars_ext {
 
 	public $name = 'Helpvars';
-	public $version = '1.4.1';
+	public $version = '1.5.0';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = 'https://github.com/caddis/helpvars';
 	public $settings_exist = 'n';
@@ -80,6 +80,7 @@ class Helpvars_ext {
 			// General variables
 			$data['all_segments'] = implode('/', $segments);
 			$data['is_ajax'] = ee()->input->is_ajax_request();
+			$data['is_pjax'] = ee()->input->get_request_header('Http-x-pjax') !== false;
 			$data['is_https'] = (isset($_SERVER['HTTPS']) and $_SERVER['HTTPS'] == 'on') ? true : false;
 
 			// Member variables

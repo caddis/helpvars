@@ -1,4 +1,4 @@
-# Helpvars 1.4.1
+# Helpvars 1.5.0
 
 A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
 
@@ -32,6 +32,16 @@ Example:
 
 	{if is_ajax}
 		Your content is being loaded via Ajax. Fancy!
+	{if:else}
+		{redirect="404"}
+	{/if}
+
+{is_pjax}
+
+Example:
+
+	{if is_pjax}
+		Your content is being requested via Pjax.
 	{if:else}
 		{redirect="404"}
 	{/if}
