@@ -80,7 +80,7 @@ class Helpvars_ext {
 			// General variables
 			$data['all_segments'] = implode('/', $segments);
 			$data['is_ajax'] = ee()->input->is_ajax_request();
-			$data['is_pjax'] = ee()->input->get_request_header('Http-x-pjax') !== false;
+			$data['is_pjax'] = ee()->input->get_request_header('X-pjax') !== false;
 			$data['is_https'] = (isset($_SERVER['HTTPS']) and $_SERVER['HTTPS'] == 'on') ? true : false;
 
 			// Member variables
