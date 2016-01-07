@@ -11,16 +11,16 @@
 class Helpvars_ext {
 
 	public $name = 'Helpvars';
-	public $version = '1.5.0';
+	public $version = '1.5.1';
 	public $description = 'Make various segment and helper variables available globally.';
 	public $docs_url = 'https://github.com/caddis/helpvars';
 	public $settings_exist = 'n';
 
 	/**
-	* Activate Extension
-	*
-	* @return void
-	*/
+	 * Activate Extension
+	 *
+	 * @return void
+	 */
 	public function activate_extension()
 	{
 		ee()->db->insert('extensions', array(
@@ -35,10 +35,11 @@ class Helpvars_ext {
 	}
 
 	/**
-	* Update Extension
-	*
-	* @return mixed void on update / false if none
-	*/
+	 * Update Extension
+	 *
+	 * @param string $current
+	 * @return mixed void on update / false if none
+	 */
 	public function update_extension($current = '')
 	{
 		if ($current == $this->version) {
@@ -49,10 +50,10 @@ class Helpvars_ext {
 	}
 
 	/**
-	* Disable Extension
-	*
-	* @return void
-	*/
+	 * Disable Extension
+	 *
+	 * @return void
+	 */
 	public function disable_extension()
 	{
 		ee()->db->where('class', __CLASS__);
@@ -60,18 +61,14 @@ class Helpvars_ext {
 	}
 
 	/**
-	* Method for template_fetch_template hook
-	* Based on low seg2cat
-	*
-	* @return void
-	*/
+	 * Method for template_fetch_template hook
+	 * Based on low seg2cat
+	 *
+	 * @return void
+	 */
 	public function template_fetch_template()
 	{
 		static $set;
-
-		if (ee()->extensions->last_call !== false) {
-			$row = ee()->extensions->last_call;
-		}
 
 		if ($set !== true) {
 			$data = array();
