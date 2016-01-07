@@ -1,4 +1,4 @@
-# Helpvars 1.5.0
+# Helpvars 1.5.1
 
 A lightweight extension to make common segment and helper variables (such as segment_x_category_id) available globally.
 
