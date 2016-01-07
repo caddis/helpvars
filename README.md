@@ -58,8 +58,12 @@ Example:
 
 Example:
 
-	{if can_access_cp}
-		Howdy! You have Control Panel access. Be sure to do good and not evil with your powers!
+	{if can_access_cp == "y"}
+		Howdy! You have control panel access. Be sure to do good and not evil with your powers!
+	{/if}
+
+	{if can_access_cp == "n"}
+		Sorry, but we don't trust you with control panel access.
 	{/if}
 
 {logged_in_member_id}
@@ -135,16 +139,4 @@ Now you will get the correct category ID.
 
 ## License
 
-Copyright 2014 Caddis Interactive, LLC
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-	http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Copyright 2016 [Caddis Interactive, LLC](https://www.caddis.co). Licensed under the [Apache License, Version 2.0](https://github.com/caddis/helpvars/blob/master/LICENSE).
