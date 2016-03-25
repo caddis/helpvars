@@ -1,5 +1,7 @@
 # 1.6.0
 
+2016-03-25
+
 - Updated for EE 3 compatibility
 
 # 1.5.0
