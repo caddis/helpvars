@@ -1,3 +1,15 @@
+# 1.6.0
+
+2016-03-25
+
+- Updated for EE 3 compatibility
+
+# 1.5.1
+
+2016-01-07
+
+- Removed unused reference to the last_call
+
 # 1.5.0
 
 2015-06-15

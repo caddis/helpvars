@@ -8,12 +8,14 @@
 * @link    http://www.caddis.co
 */
 
+include_once(PATH_THIRD . 'helpvars/addon.setup.php');
+
 class Helpvars_ext {
 
-	public $name = 'Helpvars';
-	public $version = '1.5.1';
-	public $description = 'Make various segment and helper variables available globally.';
-	public $docs_url = 'https://github.com/caddis/helpvars';
+	public $name = HELPVARS_NAME;
+	public $version = HELPVARS_VER;
+	public $description = HELPVARS_DESC;
+	public $docs_url = HELPVARS_DOCS_URL;
 	public $settings_exist = 'n';
 
 	/**
